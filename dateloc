@@ -1,0 +1,10 @@
+import pandas as pd
+df = pd.read_csv("aapl.csv",parse_dates=["Date"], index_col="Date")
+df.head()
+
+df.index
+df.loc['2017-06-30']
+df['Close'].resample('M').mean().head()
+%matplotlib inline
+df['Close'].plot()
+df['Close'].resample('M').mean().plot(kind='bar')
